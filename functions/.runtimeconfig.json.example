@@ -1,0 +1,4 @@
+{
+  "openweathermap": { "key": "OPENWEATHERMAP_API_KEY" },
+  "mapbox": { "key": "MAPBOX_API_KEY" }
+}
