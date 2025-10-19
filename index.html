@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Connected Services Web App</title>
+    <link rel="manifest" href="manifest.json" />
+    <link rel="stylesheet" href="global.css" />
+  </head>
+  <body>
+    <div id="app">
+      <header class="app-header">
+        <h1>Connected Services</h1>
+        <div id="auth-bar"></div>
+      </header>
+
+      <main class="container">
+        <section id="weather-section" class="card">
+          <h2>Weather</h2>
+          <p id="weather-status">
+            Click "Get Weather" to load weather for your location.
+          </p>
+          <button id="btn-get-weather">Get Weather</button>
+          <div id="weather-result" class="result hidden"></div>
+        </section>
+
+        <section id="map-section" class="card">
+          <h2>Map</h2>
+          <div id="map" style="height: 300px"></div>
+          <button id="btn-recenter">Recenter</button>
+        </section>
+
+        <section id="camera-section" class="card">
+          <h2>Camera & Photo Journal</h2>
+          <div id="camera-area">
+            <video
+              id="camera-stream"
+              autoplay
+              playsinline
+              class="hidden"
+            ></video>
+            <canvas id="camera-canvas" class="hidden"></canvas>
+            <img id="last-photo" alt="last captured" />
+          </div>
+          <div class="controls">
+            <button id="btn-open-camera">Open Camera</button>
+            <button id="btn-take-photo">Take Photo</button>
+            <input id="file-input" type="file" accept="image/*" />
+            <button id="btn-save-entry">Save Entry</button>
+          </div>
+        </section>
+
+        <section id="qr-section" class="card">
+          <h2>QR Scanner</h2>
+          <button id="btn-open-qr">Open QR Scanner</button>
+          <div id="qr-result"></div>
+        </section>
+
+        <section id="journal-section" class="card">
+          <h2>Photo Journal Timeline</h2>
+          <div id="journal-list"></div>
+        </section>
+      </main>
+
+      <footer class="app-footer">
+        <small>ConnectedServicesWebApp — demo</small>
+      </footer>
+    </div>
+
+    <!-- External libs -->
+    <script src="https://unpkg.com/jsqr/dist/jsQR.js"></script>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+
+    <!-- App scripts -->
+    <script src="services/firebase-init.js"></script>
+    <script src="services/location.js"></script>
+    <script src="services/weather.js"></script>
+    <script src="services/maps.js"></script>
+    <script src="services/camera.js"></script>
+    <script src="services/qr.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
