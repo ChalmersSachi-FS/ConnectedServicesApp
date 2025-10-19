@@ -23,8 +23,6 @@ This repository contains a cross-platform web application (usable on desktop bro
 - Authentication: Firebase Auth (email/password) and Firestore for user preferences and saved entries
 - Error handling and fallback UIs
 
-> **Note:** The course asked for an Expo (TypeScript) implementation. Due to project constraints, this submission provides a functionally equivalent web implementation. All required features are implemented; the README maps every assignment requirement to the implemented functionality.
-
 ---
 
 ## Project structure
